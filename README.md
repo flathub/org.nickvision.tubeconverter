@@ -1,27 +1,40 @@
-# Flathub
+# Tube Converter
 
-Flathub is the central place for building and hosting Flatpak builds.
+**An easy-to-use YouTube video downloader**
 
-Using the Flathub repository
-----------------------------
+# Features
+- A basic yt-dlp frontend
+- Supports downloading videos in multiple formats (mp4, webm, mp3, opus, flac, and wav)
+- Run multiple downloads at a time
 
-To install applications that are hosted on Flathub, use the following:
-```
-flatpak remote-add flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub org.gnome.Recipes
-```
+# Disclaimer
+The authors of Nickvision Tube Converter are not responsible/liable for any misuse of this program that may violate local copyright/DMCA laws. Users use this application at their own risk.
 
-To install applications from the beta branch, use the following:
-```
-flatpak remote-add flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo
-flatpak install flathub-beta org.godotengine.Godot
-```
+# Installation
+<table>
+  <tr>
+    <td>Flatpak</td>
+  </tr>
+  <tr>
+    <td>
+      <a href='https://beta.flathub.org/apps/details/org.nickvision.tubeconverter'><img width='130' alt='Download on Flathub' src='https://flathub.org/assets/badges/flathub-badge-en.png'/></a>
+    </td>
+  </tr>
+</table>
 
-For more information and more applications see https://flathub.org
+# Screenshots
+![MainWindow](https://user-images.githubusercontent.com/17648453/194887430-b934194b-ad9f-4b42-a3e1-ef3b6a17aab4.png)
+![AddDownload](https://user-images.githubusercontent.com/17648453/194887444-d942988b-4611-4b28-92df-1289f09d6e10.png)
+![Downloading](https://user-images.githubusercontent.com/17648453/194887457-4dcbc6e3-2c03-447b-9de6-e0b3d5faefd3.png)
+![Downloads](https://user-images.githubusercontent.com/17648453/194887476-0738e031-3364-434d-a075-88f52ff70e44.png)
+![DarkMode](https://user-images.githubusercontent.com/17648453/194887509-06bc2df8-577c-4c47-9f47-efe52312bc7c.png)
+![Logs](https://user-images.githubusercontent.com/17648453/194887523-27b91569-911e-4618-8da0-88145c75adaa.png)
 
-Contributing to Flathub
------------------------
+# Dependencies
+- [C++20](https://en.cppreference.com/w/cpp/20)
+- [GTK 4](https://www.gtk.org/)
+- [libadwaita](https://gnome.pages.gitlab.gnome.org/libadwaita/)
+- [jsoncpp](https://github.com/open-source-parsers/jsoncpp)
 
-For information on creating packages or reporting issues please see the [contributing page](/CONTRIBUTING.md).
-
-***Note:*** *this repository is not for reporting issues related to the flathub.org website itself or contributing to its development. For that, go to https://github.com/flathub/website*
+# Special Thanks
+- [daudix-UFO](https://github.com/daudix-UFO) for our application icons
