@@ -163,8 +163,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/yt-dlp/yt-dlp/releases/download/2022.11.11/yt-dlp.tar.gz",
-                    "sha256": "51fa055912c7fc742a882ff58236bd25b39055b98168a3563ed17cc575c3c3ae",
+                    "url": "https://github.com/yt-dlp/yt-dlp/releases/download/2023.01.06/yt-dlp.tar.gz",
+                    "sha256": "a77b01ed42e8436233bb36ea405a46b6a05fbc1b24726f11815b515face2d116",
                     "x-checker-data": {
                         "type": "json",
                         "url": "https://api.github.com/repos/yt-dlp/yt-dlp/tags",
