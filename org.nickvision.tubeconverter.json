@@ -242,8 +242,9 @@
             ],
             "sources": [
                 {
-                    "type": "dir",
-                    "path": ".."
+                    "type": "git",
+                    "url": "https://github.com/nlogozzo/NickvisionTubeConverter.git",
+                    "tag": "2023.3.0-beta2"
                 },
                 "nuget-sources.json"
             ]
