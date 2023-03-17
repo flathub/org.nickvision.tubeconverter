@@ -3,21 +3,60 @@
     "runtime": "org.gnome.Platform",
     "runtime-version": "43",
     "sdk": "org.gnome.Sdk",
-    "command": "org.nickvision.tubeconverter",
+    "sdk-extensions": [
+        "org.freedesktop.Sdk.Extension.dotnet7",
+        "org.freedesktop.Sdk.Extension.rust-stable"
+    ],
+    "build-options": {
+        "append-path": "/usr/lib/sdk/dotnet7/bin:/usr/lib/sdk/rust-stable/bin",
+        "append-ld-library-path": "/usr/lib/sdk/dotnet7/lib",
+        "env": {
+            "PKG_CONFIG_PATH": "/app/lib/pkgconfig:/app/share/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig:/usr/lib/sdk/dotnet7/lib/pkgconfig",
+            "RUST_BACKTRACE" : "1"
+        }
+    },
+    "command": "/app/bin/org.nickvision.tubeconverter",
     "finish-args": [
         "--socket=fallback-x11",
         "--socket=wayland",
         "--device=dri",
         "--share=ipc",
         "--share=network",
-        "--filesystem=home"
+        "--filesystem=xdg-videos",
+        "--filesystem=xdg-music",
+        "--filesystem=xdg-download"
     ],
     "cleanup": [
-        "/include",
-        "/lib/pkgconfig",
-        "*.a"
+      "/include",
+      "/lib/pkgconfig",
+      "*.a"
     ],
     "modules": [
+        {
+            "name": "just",
+            "buildsystem": "simple",
+            "build-options": {
+                "env": {
+                    "CARGO_HOME": "/run/build/just/cargo"
+                }
+            },
+            "build-commands": [
+                "cargo --offline build --release",
+                "install -Dm755 target/release/just /app/bin/just"
+            ],
+            "cleanup": [
+                "/bin/just"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/casey/just.git",
+                    "tag": "1.13.0",
+                    "commit": "baa2dfcc6f180d123672544c5ed1aedc32608228"
+                },
+                "cargo-sources.json"
+            ]
+        },
         {
             "name": "ffmpeg",
             "config-opts": [
@@ -38,8 +77,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://ffmpeg.org/releases/ffmpeg-6.0.tar.xz",
-                    "sha256": "57be87c22d9b49c112b6d24bc67d42508660e6b718b3db89c44e47e289137082",
+                    "url": "https://ffmpeg.org/releases/ffmpeg-5.1.2.tar.xz",
+                    "sha256": "619e706d662c8420859832ddc259cd4d4096a48a2ce1eefd052db9e440eef3dc",
                     "x-checker-data": {
                         "type": "html",
                         "url": "https://ffmpeg.org/releases/",
@@ -150,21 +189,30 @@
             ]
         },
         {
-            "name": "yt-dlp",
-            "no-autogen": true,
-            "no-make-install": true,
-            "make-args": [
-                "yt-dlp",
-                "PYTHON=/usr/bin/python3"
-            ],
-            "post-install": [
-                "install yt-dlp /app/bin"
+            "name": "certifi",
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3 install --prefix=/app ."
             ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/yt-dlp/yt-dlp/releases/download/2023.03.04/yt-dlp.tar.gz",
-                    "sha256": "771d2abefcd5f1e6f3ab6d6d18cdae98be4ab73538d1174e7e7236640418e150",
+                    "url": "https://github.com/certifi/python-certifi/archive/refs/tags/2022.12.07.tar.gz",
+                    "sha256": "48d30258d28d0d04b9220492bca614cc596be8f14c94b96ea8298d9284a5e3dd"
+                }
+            ]
+        },
+        {
+            "name": "yt-dlp",
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3 install --prefix=/app ."
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/yt-dlp/yt-dlp/releases/download/2023.03.03/yt-dlp.tar.gz",
+                    "sha256": "99db0ab54b986aa5c5bb145dc1cf0e516612e61cdb964ee274dddceeceae98a9",
                     "x-checker-data": {
                         "type": "json",
                         "url": "https://api.github.com/repos/yt-dlp/yt-dlp/tags",
@@ -175,28 +223,30 @@
             ]
         },
         {
-            "name": "jsoncpp",
+            "name": "blueprint-compiler",
             "buildsystem": "meson",
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://github.com/open-source-parsers/jsoncpp.git",
-                    "tag": "1.9.5"
+                    "url": "https://gitlab.gnome.org/jwestman/blueprint-compiler",
+                    "tag": "v0.6.0",
+                    "commit": "9adcab2d225fd6435edc85c72a0b67e33880e00b"
                 }
             ]
         },
         {
             "name": "org.nickvision.tubeconverter",
-            "buildsystem": "meson",
-            "config-opts": [
-                "-Dbuildtype=release"
+            "buildsystem": "simple",
+            "build-commands": [
+                "just NickvisionTubeConverter.GNOME/ publish-flatpak"
             ],
             "sources": [
                 {
                     "type": "git",
                     "url": "https://github.com/nlogozzo/NickvisionTubeConverter.git",
-                    "tag": "2023.2.0"
-                }
+                    "tag": "2023.3.0"
+                },
+                "nuget-sources.json"
             ]
         }
     ]
