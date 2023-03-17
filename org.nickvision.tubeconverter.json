@@ -12,7 +12,7 @@
         "append-ld-library-path": "/usr/lib/sdk/dotnet7/lib",
         "env": {
             "PKG_CONFIG_PATH": "/app/lib/pkgconfig:/app/share/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig:/usr/lib/sdk/dotnet7/lib/pkgconfig",
-            "RUST_BACKTRACE" : "1"
+            "RUST_BACKTRACE": "1"
         }
     },
     "command": "/app/bin/org.nickvision.tubeconverter",
@@ -27,9 +27,9 @@
         "--filesystem=xdg-download"
     ],
     "cleanup": [
-      "/include",
-      "/lib/pkgconfig",
-      "*.a"
+        "/include",
+        "/lib/pkgconfig",
+        "*.a"
     ],
     "modules": [
         {
@@ -77,8 +77,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://ffmpeg.org/releases/ffmpeg-5.1.2.tar.xz",
-                    "sha256": "619e706d662c8420859832ddc259cd4d4096a48a2ce1eefd052db9e440eef3dc",
+                    "url": "https://ffmpeg.org/releases/ffmpeg-6.0.tar.xz",
+                    "sha256": "57be87c22d9b49c112b6d24bc67d42508660e6b718b3db89c44e47e289137082",
                     "x-checker-data": {
                         "type": "html",
                         "url": "https://ffmpeg.org/releases/",
@@ -211,8 +211,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/yt-dlp/yt-dlp/releases/download/2023.03.03/yt-dlp.tar.gz",
-                    "sha256": "99db0ab54b986aa5c5bb145dc1cf0e516612e61cdb964ee274dddceeceae98a9",
+                    "url": "https://github.com/yt-dlp/yt-dlp/releases/download/2023.03.04/yt-dlp.tar.gz",
+                    "sha256": "771d2abefcd5f1e6f3ab6d6d18cdae98be4ab73538d1174e7e7236640418e150",
                     "x-checker-data": {
                         "type": "json",
                         "url": "https://api.github.com/repos/yt-dlp/yt-dlp/tags",
