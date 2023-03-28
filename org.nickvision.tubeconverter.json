@@ -1,7 +1,7 @@
 {
     "app-id": "org.nickvision.tubeconverter",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "43",
+    "runtime-version": "44",
     "sdk": "org.gnome.Sdk",
     "sdk-extensions": [
         "org.freedesktop.Sdk.Extension.dotnet7",
@@ -77,8 +77,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://ffmpeg.org/releases/ffmpeg-5.1.2.tar.xz",
-                    "sha256": "619e706d662c8420859832ddc259cd4d4096a48a2ce1eefd052db9e440eef3dc",
+                    "url": "https://ffmpeg.org/releases/ffmpeg-6.0.tar.xz",
+                    "sha256": "57be87c22d9b49c112b6d24bc67d42508660e6b718b3db89c44e47e289137082",
                     "x-checker-data": {
                         "type": "html",
                         "url": "https://ffmpeg.org/releases/",
@@ -244,7 +244,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/nlogozzo/NickvisionTubeConverter.git",
-                    "tag": "2023.3.0"
+                    "tag": "2023.3.1"
                 },
                 "nuget-sources.json"
             ]
