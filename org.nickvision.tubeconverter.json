@@ -12,7 +12,7 @@
         "append-ld-library-path": "/usr/lib/sdk/dotnet7/lib",
         "env": {
             "PKG_CONFIG_PATH": "/app/lib/pkgconfig:/app/share/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig:/usr/lib/sdk/dotnet7/lib/pkgconfig",
-            "RUST_BACKTRACE" : "1"
+            "RUST_BACKTRACE": "1"
         }
     },
     "command": "/app/bin/org.nickvision.tubeconverter",
@@ -27,9 +27,9 @@
         "--filesystem=xdg-download"
     ],
     "cleanup": [
-      "/include",
-      "/lib/pkgconfig",
-      "*.a"
+        "/include",
+        "/lib/pkgconfig",
+        "*.a"
     ],
     "modules": [
         {
@@ -157,8 +157,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/aaugustin/websockets/archive/refs/tags/10.4.tar.gz",
-                    "sha256": "5c7f345bd7924544db691de2f21c80b6fed1f303a54bfa650b782016b64e54ae",
+                    "url": "https://github.com/aaugustin/websockets/archive/refs/tags/11.0.1.tar.gz",
+                    "sha256": "17e49a3c552c2a214d667e4c0d1e3908663922bdbc63c619f63560f444124f42",
                     "x-checker-data": {
                         "type": "json",
                         "url": "https://api.github.com/repos/aaugustin/websockets/tags",
