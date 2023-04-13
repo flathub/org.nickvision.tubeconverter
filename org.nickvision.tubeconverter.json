@@ -1,7 +1,7 @@
 {
     "app-id": "org.nickvision.tubeconverter",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "43",
+    "runtime-version": "44",
     "sdk": "org.gnome.Sdk",
     "sdk-extensions": [
         "org.freedesktop.Sdk.Extension.dotnet7",
@@ -77,8 +77,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://ffmpeg.org/releases/ffmpeg-5.1.2.tar.xz",
-                    "sha256": "619e706d662c8420859832ddc259cd4d4096a48a2ce1eefd052db9e440eef3dc",
+                    "url": "https://ffmpeg.org/releases/ffmpeg-6.0.tar.xz",
+                    "sha256": "57be87c22d9b49c112b6d24bc67d42508660e6b718b3db89c44e47e289137082",
                     "x-checker-data": {
                         "type": "html",
                         "url": "https://ffmpeg.org/releases/",
@@ -203,6 +203,19 @@
             ]
         },
         {
+            "name": "aria2",
+            "config-opts": [
+                "--with-ca-bundle=/etc/ssl/certs/ca-certificates.crt"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/aria2/aria2/releases/download/release-1.36.0/aria2-1.36.0.tar.xz",
+                    "sha256": "58d1e7608c12404f0229a3d9a4953d0d00c18040504498b483305bcb3de907a5"
+                }
+            ]
+        },
+        {
             "name": "yt-dlp",
             "buildsystem": "simple",
             "build-commands": [
@@ -211,8 +224,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/yt-dlp/yt-dlp/releases/download/2023.03.03/yt-dlp.tar.gz",
-                    "sha256": "99db0ab54b986aa5c5bb145dc1cf0e516612e61cdb964ee274dddceeceae98a9",
+                    "url": "https://github.com/yt-dlp/yt-dlp/releases/download/2023.03.04/yt-dlp.tar.gz",
+                    "sha256": "771d2abefcd5f1e6f3ab6d6d18cdae98be4ab73538d1174e7e7236640418e150",
                     "x-checker-data": {
                         "type": "json",
                         "url": "https://api.github.com/repos/yt-dlp/yt-dlp/tags",
@@ -244,7 +257,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/nlogozzo/NickvisionTubeConverter.git",
-                    "tag": "2023.3.0-rc1-p1"
+                    "tag": "2023.4.2-beta1"
                 },
                 "nuget-sources.json"
             ]
