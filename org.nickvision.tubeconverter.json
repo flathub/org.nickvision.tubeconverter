@@ -12,7 +12,7 @@
         "append-ld-library-path": "/usr/lib/sdk/dotnet7/lib",
         "env": {
             "PKG_CONFIG_PATH": "/app/lib/pkgconfig:/app/share/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig:/usr/lib/sdk/dotnet7/lib/pkgconfig",
-            "RUST_BACKTRACE" : "1"
+            "RUST_BACKTRACE": "1"
         }
     },
     "command": "/app/bin/org.nickvision.tubeconverter",
@@ -27,9 +27,9 @@
         "--filesystem=xdg-download"
     ],
     "cleanup": [
-      "/include",
-      "/lib/pkgconfig",
-      "*.a"
+        "/include",
+        "/lib/pkgconfig",
+        "*.a"
     ],
     "modules": [
         {
@@ -96,8 +96,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/iustin/pyxattr/archive/refs/tags/v0.8.0.tar.gz",
-                    "sha256": "8d72f0c8d43bb9d75b1948229983d2e99593b0e9fd417e89a9026fd1e23b57e7",
+                    "url": "https://github.com/iustin/pyxattr/archive/refs/tags/v0.8.1.tar.gz",
+                    "sha256": "ce7ef783e751b96610a6eb32fc49a89340b5dc575fbe15054ce7935ebaf49edb",
                     "x-checker-data": {
                         "type": "json",
                         "url": "https://api.github.com/repos/iustin/pyxattr/releases/latest",
@@ -157,8 +157,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/aaugustin/websockets/archive/refs/tags/10.4.tar.gz",
-                    "sha256": "5c7f345bd7924544db691de2f21c80b6fed1f303a54bfa650b782016b64e54ae",
+                    "url": "https://github.com/aaugustin/websockets/archive/refs/tags/11.0.3.tar.gz",
+                    "sha256": "e412f6480c9bf8d5a58cb746a4d20df391a19017b6d2c39b136d84b0be8309c9",
                     "x-checker-data": {
                         "type": "json",
                         "url": "https://api.github.com/repos/aaugustin/websockets/tags",
