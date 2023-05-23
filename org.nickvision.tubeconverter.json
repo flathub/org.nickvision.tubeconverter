@@ -310,11 +310,12 @@
             ],
             "sources": [
                 {
-                    "type": "dir",
-                    "path": ".."
+                    "type": "git",
+                    "url": "https://github.com/NickvisionApps/TubeConverter.git",
+                    "tag": "2023.5.0-rc1"
                 },
                 "cake-sources.json",
-                "../NickvisionTubeConverter.GNOME/nuget-sources.json"
+                "nuget-sources.json"
             ]
         }
     ]
