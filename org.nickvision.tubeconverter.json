@@ -4,15 +4,13 @@
     "runtime-version": "44",
     "sdk": "org.gnome.Sdk",
     "sdk-extensions": [
-        "org.freedesktop.Sdk.Extension.dotnet7",
-        "org.freedesktop.Sdk.Extension.rust-stable"
+        "org.freedesktop.Sdk.Extension.dotnet7"
     ],
     "build-options": {
-        "append-path": "/usr/lib/sdk/dotnet7/bin:/usr/lib/sdk/rust-stable/bin",
+        "append-path": "/usr/lib/sdk/dotnet7/bin",
         "append-ld-library-path": "/usr/lib/sdk/dotnet7/lib",
         "env": {
-            "PKG_CONFIG_PATH": "/app/lib/pkgconfig:/app/share/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig:/usr/lib/sdk/dotnet7/lib/pkgconfig",
-            "RUST_BACKTRACE" : "1"
+            "PKG_CONFIG_PATH": "/app/lib/pkgconfig:/app/share/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig:/usr/lib/sdk/dotnet7/lib/pkgconfig"
         }
     },
     "command": "/app/bin/org.nickvision.tubeconverter",
@@ -30,29 +28,6 @@
       "*.a"
     ],
     "modules": [
-        {
-            "name": "just",
-            "cleanup": [ "*" ],
-            "buildsystem": "simple",
-            "build-options": {
-                "env": {
-                    "CARGO_HOME": "/run/build/just/cargo"
-                }
-            },
-            "build-commands": [
-                "cargo --offline build --release",
-                "install -Dm755 target/release/just /app/bin/just"
-            ],
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://github.com/casey/just.git",
-                    "tag": "1.13.0",
-                    "commit": "baa2dfcc6f180d123672544c5ed1aedc32608228"
-                },
-                "cargo-sources.json"
-            ]
-        },
         {
             "name": "ffmpeg",
             "config-opts": [
@@ -233,7 +208,6 @@
         },
         {
             "name": "blueprint-compiler",
-            "cleanup": [ "*" ],
             "buildsystem": "meson",
             "sources": [
                 {
@@ -244,7 +218,7 @@
                 }
             ]
         },
-        "shared-modules/intltool/intltool-0.51.json",
+        "intltool/intltool-0.51.json",
         {
             "name": "dee",
             "buildsystem": "simple",
@@ -331,15 +305,16 @@
             "name": "org.nickvision.tubeconverter",
             "buildsystem": "simple",
             "build-commands": [
-                "just NickvisionTubeConverter.GNOME/ publish-flatpak"
+                "chmod +x ./flatpak/build.sh",
+                "./flatpak/build.sh gnome"
             ],
             "sources": [
                 {
-                    "type": "git",
-                    "url": "https://github.com/nlogozzo/NickvisionTubeConverter.git",
-                    "tag": "2023.5.0-beta1"
+                    "type": "dir",
+                    "path": ".."
                 },
-                "nuget-sources.json"
+                "cake-sources.json",
+                "../NickvisionTubeConverter.GNOME/nuget-sources.json"
             ]
         }
     ]
