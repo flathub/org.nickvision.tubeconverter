@@ -4,15 +4,13 @@
     "runtime-version": "44",
     "sdk": "org.gnome.Sdk",
     "sdk-extensions": [
-        "org.freedesktop.Sdk.Extension.dotnet7",
-        "org.freedesktop.Sdk.Extension.rust-stable"
+        "org.freedesktop.Sdk.Extension.dotnet7"
     ],
     "build-options": {
-        "append-path": "/usr/lib/sdk/dotnet7/bin:/usr/lib/sdk/rust-stable/bin",
+        "append-path": "/usr/lib/sdk/dotnet7/bin",
         "append-ld-library-path": "/usr/lib/sdk/dotnet7/lib",
         "env": {
-            "PKG_CONFIG_PATH": "/app/lib/pkgconfig:/app/share/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig:/usr/lib/sdk/dotnet7/lib/pkgconfig",
-            "RUST_BACKTRACE" : "1"
+            "PKG_CONFIG_PATH": "/app/lib/pkgconfig:/app/share/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig:/usr/lib/sdk/dotnet7/lib/pkgconfig"
         }
     },
     "command": "/app/bin/org.nickvision.tubeconverter",
@@ -22,9 +20,7 @@
         "--device=dri",
         "--share=ipc",
         "--share=network",
-        "--filesystem=xdg-videos",
-        "--filesystem=xdg-music",
-        "--filesystem=xdg-download"
+        "--talk-name=com.canonical.Unity"
     ],
     "cleanup": [
       "/include",
@@ -32,31 +28,6 @@
       "*.a"
     ],
     "modules": [
-        {
-            "name": "just",
-            "buildsystem": "simple",
-            "build-options": {
-                "env": {
-                    "CARGO_HOME": "/run/build/just/cargo"
-                }
-            },
-            "build-commands": [
-                "cargo --offline build --release",
-                "install -Dm755 target/release/just /app/bin/just"
-            ],
-            "cleanup": [
-                "/bin/just"
-            ],
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://github.com/casey/just.git",
-                    "tag": "1.13.0",
-                    "commit": "baa2dfcc6f180d123672544c5ed1aedc32608228"
-                },
-                "cargo-sources.json"
-            ]
-        },
         {
             "name": "ffmpeg",
             "config-opts": [
@@ -247,18 +218,103 @@
                 }
             ]
         },
+        "intltool/intltool-0.51.json",
+        {
+            "name": "dee",
+            "buildsystem": "simple",
+            "build-options": {
+                "cflags": "-Wno-error=maybe-uninitialized -Wno-error=unused-result"
+            },
+            "build-commands": [
+                "autoreconf -fi",
+                "./configure --prefix=/app --disable-{static,tests} --with-pygi-overrides-dir=/app/lib/python3.10/site-packages/gi/overrides",
+                "make",
+                "make install"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "http://launchpad.net/dee/1.0/1.2.7/+download/dee-1.2.7.tar.gz",
+                    "sha256": "1bf0336ce684aa0f48d6eae2469628c1a9b43695a77443bc31a5790aa673bf8a"
+                },
+                {
+                    "type": "patch",
+                    "path": "dee-1.2.7-gcc6-fixes.patch"
+                },
+                {
+                    "type": "patch",
+                    "path": "dee-1.2.7-deprecated-g_type_class_add_private.patch"
+                },
+                {
+                    "type": "patch",
+                    "path": "vapi-skip-properties.patch"
+                },
+                {
+                    "type": "patch",
+                    "path": "dee-1.2.7-fix-duplicates-vala-0.5X.patch"
+                }
+            ]
+        },
+        {
+            "name": "gnome-common",
+            "cleanup": [ "*" ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.gnome.org/sources/gnome-common/3.18/gnome-common-3.18.0.tar.xz",
+                    "sha256": "22569e370ae755e04527b76328befc4c73b62bfd4a572499fde116b8318af8cf"
+                }
+            ]
+        },
+        {
+            "name": "libdbusmenu",
+            "config-opts": [ "--with-gtk=3", "--disable-dumper", "--prefix=/app" ],
+            "make-install-args": [ "INTROSPECTION_TYPELIBDIR=/app/lib/girepository-1.0" ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://launchpad.net/libdbusmenu/16.04/16.04.0/+download/libdbusmenu-16.04.0.tar.gz",
+                    "sha512": "ee9654ac4ed94bdebc94a6db83b126784273a417a645b2881b2ba676a5f67d7fc95dd2bb37bfb0890aa47299ed73cb21ed7de8b75f3fed6b69bfd39065062241"
+                },
+                {
+                    "type": "patch",
+                    "path": "libdbusmenu-no-werror.patch"
+                }
+            ]
+        },
+        {
+            "name": "libunity",
+            "config-opts": [ "--with-pygi-overrides-dir=/app/lib/python3.10/site-packages/gi/overrides" ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://launchpad.net/ubuntu/+archive/primary/+files/libunity_7.1.4+19.04.20190319.orig.tar.gz",
+                    "sha256": "56ecb380d74bf74caba193d9e8ad6b0c85ccf9eeb461bc9731c2b8636e1f1492"
+                },
+                {
+                    "type": "patch",
+                    "path": "0001-Fix-FTB-with-recent-vala-requiring-non-public-abstra.patch"
+                },
+                {
+                    "type": "patch",
+                    "path": "libunity-7.1.4-vala-053.patch"
+                }
+            ]
+        },
         {
             "name": "org.nickvision.tubeconverter",
             "buildsystem": "simple",
             "build-commands": [
-                "just NickvisionTubeConverter.GNOME/ publish-flatpak"
+                "chmod +x ./flatpak/build.sh",
+                "./flatpak/build.sh gnome"
             ],
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://github.com/nlogozzo/NickvisionTubeConverter.git",
-                    "tag": "2023.4.2"
+                    "url": "https://github.com/NickvisionApps/TubeConverter.git",
+                    "tag": "2023.5.0"
                 },
+                "cake-sources.json",
                 "nuget-sources.json"
             ]
         }
