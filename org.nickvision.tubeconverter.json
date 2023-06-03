@@ -312,8 +312,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/NickvisionApps/TubeConverter.git",
-                    "branch": "main",
-                    "commit": "686fbcdf1dd1c24865f697ca064f07e08e0ef779"
+                    "tag": "2023.6.0-p1"
                 },
                 "cake-sources.json",
                 "nuget-sources.json"
