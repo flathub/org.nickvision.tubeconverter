@@ -44,7 +44,7 @@
             ],
             "cleanup": [
                 "/share/ffmpeg"
-            ],
+            ],nlogozzo-patch-1
             "sources": [
                 {
                     "type": "archive",
@@ -85,7 +85,7 @@
                 "pip3 install --no-build-isolation --prefix=/app ."
             ],
             "sources": [
-                {
+                {nlogozzo-patch-1
                     "type": "archive",
                     "url": "https://github.com/quodlibet/mutagen/archive/refs/tags/release-1.46.0.tar.gz",
                     "sha256": "734455642e734983353a85ec6e00c809564c63e53ec10cffc1152d51dd576b5e",
@@ -312,7 +312,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/NickvisionApps/TubeConverter.git",
-                    "tag": "2023.6.0-p1"
+                    "tag": "2023.6.1-beta1"
                 },
                 "cake-sources.json",
                 "nuget-sources.json"
