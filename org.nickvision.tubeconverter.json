@@ -20,7 +20,8 @@
         "--device=dri",
         "--share=ipc",
         "--share=network",
-        "--talk-name=com.canonical.Unity"
+        "--talk-name=com.canonical.Unity",
+        "--filesystem=xdg-download"
     ],
     "cleanup": [
       "/include",
@@ -178,7 +179,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/NickvisionApps/TubeConverter.git",
-                    "tag": "2023.6.1"
+                    "tag": "2023.6.2"
                 },
                 "cake-sources.json",
                 "nuget-sources.json"
