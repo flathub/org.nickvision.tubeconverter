@@ -85,7 +85,7 @@
                 }
             ]
         },
-        "intltool/intltool-0.51.json",
+        "shared-modules/intltool/intltool-0.51.json",
         {
             "name": "dee",
             "buildsystem": "simple",
@@ -179,7 +179,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/NickvisionApps/TubeConverter.git",
-                    "tag": "2023.6.2-rc1"
+                    "tag": "2023.7.1-rc1"
                 },
                 "cake-sources.json",
                 "nuget-sources.json"
