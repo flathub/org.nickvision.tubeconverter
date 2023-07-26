@@ -179,7 +179,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/NickvisionApps/TubeConverter.git",
-                    "tag": "2023.7.2"
+                    "tag": "2023.7.3"
                 },
                 "cake-sources.json",
                 "nuget-sources.json"
