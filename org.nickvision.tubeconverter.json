@@ -178,9 +178,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/NickvisionApps/TubeConverter.git",
-                    "tag": "2023.8.0-rc3"
+                    "tag": "2023.8.1-beta1"
                 },
-                "cake-sources.json",
                 "nuget-sources.json"
             ]
         }
