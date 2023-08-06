@@ -178,7 +178,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/NickvisionApps/TubeConverter.git",
-                    "tag": "2023.8.1-beta1"
+                    "tag": "2023.8.1-beta2"
                 },
                 "nuget-sources.json"
             ]
