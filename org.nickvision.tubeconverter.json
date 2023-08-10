@@ -40,6 +40,7 @@
                 "--disable-devices",
                 "--enable-gnutls",
                 "--enable-libmp3lame",
+                "--enable-libopus",
                 "--enable-libvorbis"
             ],
             "cleanup": [
@@ -178,7 +179,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/NickvisionApps/TubeConverter.git",
-                    "tag": "2023.8.1-beta2"
+                    "tag": "2023.8.1-rc1"
                 },
                 "nuget-sources.json"
             ]
