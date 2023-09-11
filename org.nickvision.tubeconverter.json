@@ -19,6 +19,7 @@
         "--share=ipc",
         "--share=network",
         "--talk-name=com.canonical.Unity",
+        "--talk-name=org.freedesktop.secrets",
         "--system-talk-name=org.freedesktop.NetworkManager",
         "--filesystem=xdg-download"
     ],
@@ -76,6 +77,9 @@
         {
             "name": "blueprint-compiler",
             "buildsystem": "meson",
+            "cleanup": [
+                "*"
+            ],
             "sources": [
                 {
                     "type": "git",
@@ -178,8 +182,8 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://github.com/NickvisionApps/TubeConverter.git",
-                    "commit": "dd6f8838bdc907f72ad6c9c562e127d2767795df"
+                    "url": "https://github.com/NickvisionApps/Parabolic.git",
+                    "tag": "2023.9.0-rc1"
                 },
                 "nuget-sources.json"
             ]
