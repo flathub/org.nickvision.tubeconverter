@@ -19,6 +19,7 @@
         "--share=ipc",
         "--share=network",
         "--talk-name=com.canonical.Unity",
+        "--talk-name=org.freedesktop.secrets",
         "--system-talk-name=org.freedesktop.NetworkManager",
         "--filesystem=xdg-download"
     ],
@@ -181,8 +182,8 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://github.com/NickvisionApps/TubeConverter.git",
-                    "tag": "2023.8.3"
+                    "url": "https://github.com/NickvisionApps/Parabolic.git",
+                    "tag": "2023.9.0"
                 },
                 "nuget-sources.json"
             ]
