@@ -1,7 +1,7 @@
 {
     "app-id": "org.nickvision.tubeconverter",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "44",
+    "runtime-version": "45",
     "sdk": "org.gnome.Sdk",
     "sdk-extensions": [
         "org.freedesktop.Sdk.Extension.dotnet7"
@@ -98,7 +98,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/NickvisionApps/Parabolic.git",
-                    "tag": "2023.11.0-beta2"
+                    "tag": "2023.11.0-rc1"
                 },
                 "nuget-sources.json"
             ]
