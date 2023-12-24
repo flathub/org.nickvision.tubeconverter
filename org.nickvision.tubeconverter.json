@@ -4,12 +4,12 @@
     "runtime-version": "45",
     "sdk": "org.gnome.Sdk",
     "sdk-extensions": [
-        "org.freedesktop.Sdk.Extension.dotnet7"
+        "org.freedesktop.Sdk.Extension.dotnet8"
     ],
     "build-options": {
-        "append-path": "/usr/lib/sdk/dotnet7/bin",
-        "append-ld-library-path": "/usr/lib/sdk/dotnet7/lib",
-        "append-pkg-config-path": "/usr/lib/sdk/dotnet7/lib/pkgconfig"
+        "append-path": "/usr/lib/sdk/dotnet8/bin",
+        "append-ld-library-path": "/usr/lib/sdk/dotnet8/lib",
+        "append-pkg-config-path": "/usr/lib/sdk/dotnet8/lib/pkgconfig"
     },
     "command": "org.nickvision.tubeconverter",
     "finish-args": [
@@ -66,8 +66,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/aria2/aria2/releases/download/release-1.36.0/aria2-1.36.0.tar.xz",
-                    "sha256": "58d1e7608c12404f0229a3d9a4953d0d00c18040504498b483305bcb3de907a5"
+                    "url": "https://github.com/aria2/aria2/releases/download/release-1.37.0/aria2-1.37.0.tar.xz",
+                    "sha256": "60a420ad7085eb616cb6e2bdf0a7206d68ff3d37fb5a956dc44242eb2f79b66b"
                 }
             ]
         },
@@ -82,8 +82,7 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/jwestman/blueprint-compiler",
-                    "tag": "v0.10.0",
-                    "commit": "2a39a16391122af2f3d812e478c1c1398c98b972"
+                    "tag": "v0.10.0"
                 }
             ]
         },
@@ -98,7 +97,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/NickvisionApps/Parabolic.git",
-                    "tag": "2023.11.0-rc2"
+                    "tag": "2023.12.0-beta1"
                 },
                 "nuget-sources.json"
             ]
