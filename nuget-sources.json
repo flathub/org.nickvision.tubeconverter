@@ -330,10 +330,10 @@
   },
   {
     "type": "file",
-    "url": "https://api.nuget.org/v3-flatcontainer/cake.filehelpers/7.0.0/cake.filehelpers.7.0.0.nupkg",
-    "sha512": "1d664222e299c5289a24eac50c98add36840e0820af8f13ff826914250624bc8408f0d8e6c83e8b579e25ed675d2193352953c65f6fc6e9b6e8fe41da9cc8678",
+    "url": "https://api.nuget.org/v3-flatcontainer/cake.filehelpers/6.1.3/cake.filehelpers.6.1.3.nupkg",
+    "sha512": "3045743d86914cea38168063c3a2002429a5ed439a191dd85a9fd755ce4e67835e1592cf0f6098a9dfcd9370ab43f8d588d5dceb71c4d8ebc8f0e8f0c7d1dd96",
     "dest": "nuget-sources",
-    "dest-filename": "cake.filehelpers.7.0.0.nupkg"
+    "dest-filename": "cake.filehelpers.6.1.3.nupkg"
   },
   {
     "type": "file",
