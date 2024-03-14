@@ -97,7 +97,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/NickvisionApps/Parabolic.git",
-                    "tag": "2023.12.0"
+                    "commit": "2298d79b0499959a49f204717ee08278db5dec80"
                 },
                 "nuget-sources.json"
             ]
