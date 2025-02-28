@@ -32,8 +32,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://boostorg.jfrog.io/artifactory/main/release/1.86.0/source/boost_1_86_0.tar.bz2",
-                    "sha256": "1bed88e40401b2cb7a1f76d4bab499e352fa4d0c5f31c0dbae64e24d34d7513b"
+                    "url": "https://archives.boost.io/release/1.87.0/source/boost_1_87_0.tar.bz2",
+                    "sha256": "af57be25cb4c4f4b413ed692fe378affb4352ea50fbe294a11ef548f4d527d89"
                 }
             ]
         },
@@ -64,7 +64,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/nickvisionapps/libnick",
-                    "tag": "2025.1.0"
+                    "tag": "2025.2.0"
                 }
             ]
         },
@@ -78,16 +78,16 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/autobuild-2025-01-27-14-15/ffmpeg-n7.1-184-gdc07f98934-linux64-gpl-7.1.tar.xz",
-                    "sha256": "1ce51162bfb3b0067e7bfcb834437c480e07ceb2d2aeacaa377949e1a5f09a06",
+                    "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/autobuild-2025-02-27-14-16/ffmpeg-n7.1-214-g71889a8437-linux64-gpl-7.1.tar.xz",
+                    "sha256": "7a1ee831780063f4af4ae3b9977a2583df162ecb2523b863338093c08d5d4eff",
                     "only-arches": [
                         "x86_64"
                     ]
                 },
                 {
                     "type": "archive",
-                    "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/autobuild-2025-01-27-14-15/ffmpeg-n7.1-184-gdc07f98934-linuxarm64-gpl-7.1.tar.xz",
-                    "sha256": "4c5402e71452b5e70eacf89c4cf452d4a671bd684b8974542b96aaa4be52aebe",
+                    "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/autobuild-2025-02-27-14-16/ffmpeg-n7.1-214-g71889a8437-linuxarm64-gpl-7.1.tar.xz",
+                    "sha256": "d7b80fb8b9d75c24de77255d2ec7502cfc8aef9ca7d537f45bbd6980c136c4ec",
                     "only-arches": [
                         "aarch64"
                     ]
