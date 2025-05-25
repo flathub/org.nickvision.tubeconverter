@@ -147,7 +147,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/NickvisionApps/Parabolic.git",
-                    "tag": "2025.5.4-beta2"
+                    "branch": "next"
                 }
             ]
         }
