@@ -53,6 +53,40 @@
             ]
         },
         {
+            "name": "tcl",
+            "buildsystem": "autotools",
+            "subdir": "unix",
+            "config-opts": [
+                "--enable-shared=no"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://prdownloads.sourceforge.net/tcl/tcl8.6.16-src.tar.gz",
+                    "sha256": "91cb8fa61771c63c262efb553059b7c7ad6757afa5857af6265e4b0bdc2a14a5"
+                }
+            ]
+        },
+        {
+            "name": "sqlcipher",
+            "buildsystem": "autotools",
+            "config-opts": [
+                "--enable-tempstore=yes",
+                "--enable-fts5",
+                "--enable-releasemode",
+                "--disable-static",
+                "CFLAGS=-DSQLITE_HAS_CODEC",
+                "LDFLAGS=-lcrypto"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/sqlcipher/sqlcipher",
+                    "tag": "v4.6.1"
+                }
+            ]
+        },
+        {
             "name": "libnick",
             "buildsystem": "cmake-ninja",
             "builddir": true,
@@ -64,7 +98,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/nickvisionapps/libnick",
-                    "tag": "2025.6.1"
+                    "tag": "2025.6.5"
                 }
             ]
         },
@@ -78,16 +112,16 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/autobuild-2025-05-23-15-29/ffmpeg-n7.1.1-20-gdf29f11136-linux64-gpl-7.1.tar.xz",
-                    "sha256": "6c0fb090a93e0d5c69eda5d07aab76e88ae25ffafa41fac2acbdcc8ed9122e29",
+                    "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/autobuild-2025-07-04-14-52/ffmpeg-n7.1.1-54-g6400860b9d-linux64-gpl-7.1.tar.xz",
+                    "sha256": "49aef273ec26f5b0f5b37c05d999e531ba32271848ddbecffd0940425de07814",
                     "only-arches": [
                         "x86_64"
                     ]
                 },
                 {
                     "type": "archive",
-                    "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/autobuild-2025-05-23-15-29/ffmpeg-n7.1.1-20-g2b0ea195e1-linuxarm64-gpl-7.1.tar.xz",
-                    "sha256": "496ee96f984708e682a17b9f53f6ebfde429c74f26ad548390e9af811db2af07",
+                    "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/autobuild-2025-07-04-14-52/ffmpeg-n7.1.1-54-g6400860b9d-linuxarm64-gpl-7.1.tar.xz",
+                    "sha256": "bd5333a395cccf1eab0ebc0c2afc1056d88cd0e32e0706f63e8c589821feff9c",
                     "only-arches": [
                         "aarch64"
                     ]
@@ -147,7 +181,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/NickvisionApps/Parabolic.git",
-                    "tag": "2025.6.0-beta1"
+                    "tag": "2025.7.0-beta1"
                 }
             ]
         }
