@@ -18,7 +18,10 @@
     ],
     "cleanup":[
         "/include",
+        "/lib/cmake",
+        "/lib/debug",
         "/lib/pkgconfig",
+        "/man",
         "*.a"
     ],
     "modules" : [
@@ -34,6 +37,24 @@
                     "type": "archive",
                     "url": "https://archives.boost.io/release/1.88.0/source/boost_1_88_0.tar.bz2",
                     "sha256": "46d9d2c06637b219270877c9e16155cbd015b6dc84349af064c088e9b5b12f7b"
+                }
+            ]
+        },
+        {
+            "name": "cpr",
+            "buildsystem": "cmake-ninja",
+            "builddir": true,
+            "config-opts": [
+                "-DCMAKE_BUILD_TYPE=Release",
+                "-DCPR_BUILD_TESTS=OFF",
+                "-DCPR_USE_SYSTEM_CURL=ON",
+                "-DCPR_ENABLE_SSL=ON"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/libcpr/cpr",
+                    "commit": "93a325cd5496c79d1783c22041985fe5d27ac965"
                 }
             ]
         },
@@ -98,7 +119,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/nickvisionapps/libnick",
-                    "tag": "2025.6.5"
+                    "tag": "2025.7.1"
                 }
             ]
         },
@@ -174,14 +195,13 @@
             "buildsystem": "cmake-ninja",
             "builddir": true,
             "config-opts": [
-                "-DCMAKE_BUILD_TYPE=Release",
-                "-DUI_PLATFORM=gnome"
+                "-DCMAKE_BUILD_TYPE=Release"
             ],
             "sources": [
                 {
                     "type": "git",
                     "url": "https://github.com/NickvisionApps/Parabolic.git",
-                    "tag": "2025.7.0-beta1"
+                    "tag": "2025.7.0-beta2"
                 }
             ]
         }
