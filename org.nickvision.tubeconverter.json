@@ -53,22 +53,22 @@
                 {
                     "type": "git",
                     "url": "https://github.com/libcpr/cpr",
-                    "commit": "93a325cd5496c79d1783c22041985fe5d27ac965"
+                    "commit": "b14cd346bf3657ac046ebde136bd9300ce885c5e"
                 }
             ]
         },
         {
             "name": "maddy",
-            "buildsystem": "simple",
-            "build-commands": [
-                "mkdir -p /app/include/maddy",
-                "mv include/maddy/* /app/include/maddy"
+            "buildsystem": "cmake-ninja",
+            "builddir": true,
+            "config-opts": [
+                "-DCMAKE_BUILD_TYPE=Release"
             ],
             "sources": [
                 {
                     "type": "git",
                     "url": "https://github.com/progsource/maddy",
-                    "tag": "1.5.0"
+                    "tag": "1.6.0"
                 }
             ]
         },
@@ -118,7 +118,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/nickvisionapps/libnick",
-                    "tag": "2025.7.1"
+                    "tag": "2025.7.6"
                 }
             ]
         },
@@ -132,16 +132,16 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/autobuild-2025-07-04-14-52/ffmpeg-n7.1.1-54-g6400860b9d-linux64-gpl-7.1.tar.xz",
-                    "sha256": "49aef273ec26f5b0f5b37c05d999e531ba32271848ddbecffd0940425de07814",
+                    "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/autobuild-2025-07-31-15-41/ffmpeg-n7.1.1-56-gc2184b65d2-linux64-gpl-7.1.tar.xz",
+                    "sha256": "b48fd3a4145add1f99b45ed4bdb94873325e9b99bd0061ba9b1d69ff3f5cd893",
                     "only-arches": [
                         "x86_64"
                     ]
                 },
                 {
                     "type": "archive",
-                    "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/autobuild-2025-07-04-14-52/ffmpeg-n7.1.1-54-g6400860b9d-linuxarm64-gpl-7.1.tar.xz",
-                    "sha256": "bd5333a395cccf1eab0ebc0c2afc1056d88cd0e32e0706f63e8c589821feff9c",
+                    "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/autobuild-2025-07-31-15-41/ffmpeg-n7.1.1-56-gc2184b65d2-linuxarm64-gpl-7.1.tar.xz",
+                    "sha256": "8640ab5740a3fe47a47438a047f21bc8eb9426994784a81362207d39f10a4ef7",
                     "only-arches": [
                         "aarch64"
                     ]
@@ -200,7 +200,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/NickvisionApps/Parabolic.git",
-                    "tag": "2025.7.0-beta2"
+                    "tag": "2025.8.0-beta1"
                 }
             ]
         }
