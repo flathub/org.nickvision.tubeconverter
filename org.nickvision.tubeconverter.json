@@ -34,8 +34,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://archives.boost.io/release/1.88.0/source/boost_1_88_0.tar.bz2",
-                    "sha256": "46d9d2c06637b219270877c9e16155cbd015b6dc84349af064c088e9b5b12f7b"
+                    "url": "https://archives.boost.io/release/1.89.0/source/boost_1_89_0.tar.bz2",
+                    "sha256": "85a33fa22621b4f314f8e85e1a5e2a9363d22e4f4992925d4bb3bc631b5a0c7a"
                 }
             ]
         },
@@ -53,22 +53,22 @@
                 {
                     "type": "git",
                     "url": "https://github.com/libcpr/cpr",
-                    "commit": "b14cd346bf3657ac046ebde136bd9300ce885c5e"
+                    "commit": "a0ff651296a620ed5fabf7d12cf4905fefc7ce86"
                 }
             ]
         },
         {
             "name": "maddy",
-            "buildsystem": "simple",
-            "build-commands": [
-                "mkdir -p /app/include/maddy",
-                "mv include/maddy/* /app/include/maddy"
+            "buildsystem": "cmake-ninja",
+            "builddir": true,
+            "config-opts": [
+                "-DCMAKE_BUILD_TYPE=Release"
             ],
             "sources": [
                 {
                     "type": "git",
                     "url": "https://github.com/progsource/maddy",
-                    "tag": "1.5.0"
+                    "tag": "1.6.0"
                 }
             ]
         },
@@ -118,12 +118,12 @@
                 {
                     "type": "git",
                     "url": "https://github.com/nickvisionapps/libnick",
-                    "tag": "2025.7.3"
+                    "tag": "2025.7.6"
                 }
             ]
         },
         "python3-modules.json",
-       {
+        {
             "name": "ffmpeg",
             "buildsystem": "simple",
             "build-commands": [
@@ -132,16 +132,16 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/autobuild-2025-07-20-15-32/ffmpeg-n7.1.1-56-gc2184b65d2-linux64-gpl-7.1.tar.xz",
-                    "sha256": "f7bc97713d0d60e52ae51cee92037719a76ff8b27eb5ffb93de550ef68ebe859",
+                    "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/autobuild-2025-08-11-15-40/ffmpeg-n7.1.1-56-gc2184b65d2-linux64-gpl-7.1.tar.xz",
+                    "sha256": "918103a0ef17aa77bb9ba12a27a733c0c662ad2c7d8a157657849ce08495daaa",
                     "only-arches": [
                         "x86_64"
                     ]
                 },
                 {
                     "type": "archive",
-                    "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/autobuild-2025-07-20-15-32/ffmpeg-n7.1.1-56-gc2184b65d2-linuxarm64-gpl-7.1.tar.xz",
-                    "sha256": "72b9331e8958f4970ef12ab5e8593fc9d8fcb5c99c7b861b79b14013653275da",
+                    "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/autobuild-2025-08-11-15-40/ffmpeg-n7.1.1-56-gc2184b65d2-linuxarm64-gpl-7.1.tar.xz",
+                    "sha256": "97ad92c788b36eb992b37b1453385953188d652c731a78efa9ce79f74a2e91e8",
                     "only-arches": [
                         "aarch64"
                     ]
@@ -200,7 +200,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/NickvisionApps/Parabolic.git",
-                    "tag": "2025.7.2"
+                    "tag": "2025.8.0"
                 }
             ]
         }
