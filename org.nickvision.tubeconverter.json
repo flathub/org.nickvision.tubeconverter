@@ -162,6 +162,31 @@
             ]
         },
         {
+            "name": "deno",
+            "buildsystem": "simple",
+            "build-commands": [
+                "mv * /app/bin/"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/denoland/deno/releases/download/v2.5.2/deno-x86_64-unknown-linux-gnu.zip",
+                    "sha256": "520fd4bc2d18b50b6ac2ea8b7d0f7f6a35588e412754a081e8c6afd4b15264c4",
+                    "only-arches": [
+                        "x86_64"
+                    ]
+                },
+                {
+                    "type": "archive",
+                    "url": "https://github.com/denoland/deno/releases/download/v2.5.2/deno-aarch64-unknown-linux-gnu.zip",
+                    "sha256": "e7dca4989847db4237589153ff6cc572b212c8dd1640219b6788badfc8f9a3ef",
+                    "only-arches": [
+                        "aarch64"
+                    ]
+                }
+            ]
+        },
+        {
             "name": "blueprint-compiler",
             "buildsystem": "meson",
             "cleanup": [
