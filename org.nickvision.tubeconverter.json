@@ -118,7 +118,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/nickvisionapps/libnick",
-                    "tag": "2025.9.4"
+                    "tag": "2025.10.0"
                 }
             ]
         },
@@ -200,7 +200,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/NickvisionApps/Parabolic.git",
-                    "tag": "2025.10.1"
+                    "tag": "2025.10.2"
                 }
             ]
         }
