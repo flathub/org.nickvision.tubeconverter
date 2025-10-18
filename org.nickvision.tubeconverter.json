@@ -136,7 +136,7 @@
                 }
             ]
         },
-       {
+        {
             "name": "ffmpeg",
             "buildsystem": "simple",
             "build-commands": [
