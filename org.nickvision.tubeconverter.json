@@ -19,6 +19,7 @@
         "--filesystem=~/.config/chromium:ro",
         "--filesystem=~/.config/microsoft-edge:ro",
         "--filesystem=~/.mozilla/firefox:ro",
+        "--filesystem=~/.config/mozilla/firefox:ro",
         "--filesystem=~/snap/firefox/common/.mozilla/firefox:ro",
         "--filesystem=~/.config/opera:ro",
         "--filesystem=~/.config/vivaldi:ro",
@@ -157,16 +158,16 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/autobuild-2025-11-27-14-16/ffmpeg-N-121910-gcac5018eb9-linux64-gpl.tar.xz",
-                    "sha256": "da98e1246320a14a059a50a6c878310b782e301d3e34b6d0e8497fea47b5d654",
+                    "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/autobuild-2026-01-17-14-14/ffmpeg-N-122468-gbb29b51876-linux64-gpl.tar.xz",
+                    "sha256": "9f056f54eb4e9218f984381ef056e32e54674fe8df89050f995f28f7307a25dc",
                     "only-arches": [
                         "x86_64"
                     ]
                 },
                 {
                     "type": "archive",
-                    "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/autobuild-2025-11-27-14-16/ffmpeg-N-121910-gcac5018eb9-linuxarm64-gpl.tar.xz",
-                    "sha256": "9fb097b7de394c252ded2eaade6897a335b8b04785ba08bb0af80782bb897644",
+                    "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/autobuild-2026-01-17-14-14/ffmpeg-N-122467-gc3d3377fe1-linuxarm64-gpl.tar.xz",
+                    "sha256": "8119fa3c8896a2d0f0cdcbb515a8078caf6662c89839d120a7b2f42d68a204bd",
                     "only-arches": [
                         "aarch64"
                     ]
@@ -182,16 +183,16 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/denoland/deno/releases/download/v2.5.6/deno-x86_64-unknown-linux-gnu.zip",
-                    "sha256": "fd4f6abc1b6a134fa9a4dba56519f1631f44c88e04e4e3e9a8ff5975dfa66e1a",
+                    "url": "https://github.com/denoland/deno/releases/download/v2.6.5/deno-x86_64-unknown-linux-gnu.zip",
+                    "sha256": "e0f109b9ae6d828512bdbfc0524779ea42d7c117efd351860589c07506803436",
                     "only-arches": [
                         "x86_64"
                     ]
                 },
                 {
                     "type": "archive",
-                    "url": "https://github.com/denoland/deno/releases/download/v2.5.6/deno-aarch64-unknown-linux-gnu.zip",
-                    "sha256": "f5e60ae3dfceb61e5e5a41f22129e40a8bc17f6393b59e75d7ca19ceef32d824",
+                    "url": "https://github.com/denoland/deno/releases/download/v2.6.5/deno-aarch64-unknown-linux-gnu.zip",
+                    "sha256": "6613f3ccfc7e36d91b1a856d0a3d3a6d1286d09a9f0d775f99e50706e0ebc81d",
                     "only-arches": [
                         "aarch64"
                     ]
