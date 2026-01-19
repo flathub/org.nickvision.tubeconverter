@@ -1,20 +1,29 @@
 {
     "app-id" : "org.nickvision.tubeconverter",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "48",
+    "runtime-version" : "49",
     "sdk" : "org.gnome.Sdk",
     "command" : "org.nickvision.tubeconverter",
     "finish-args":[
-        "--socket=fallback-x11",
+       "--socket=fallback-x11",
         "--socket=wayland",
         "--device=dri",
         "--share=ipc",
         "--share=network",
-        "--talk-name=com.canonical.Unity",
         "--talk-name=org.freedesktop.Notifications",
         "--talk-name=org.freedesktop.ScreenSaver",
         "--talk-name=org.freedesktop.secrets",
-        "--filesystem=xdg-download"
+        "--filesystem=xdg-download",
+        "--filesystem=~/.config/BraveSoftware/Brave-Browser:ro",
+        "--filesystem=~/.config/google-chrome:ro",
+        "--filesystem=~/.config/chromium:ro",
+        "--filesystem=~/.config/microsoft-edge:ro",
+        "--filesystem=~/.mozilla/firefox:ro",
+        "--filesystem=~/.config/mozilla/firefox:ro",
+        "--filesystem=~/snap/firefox/common/.mozilla/firefox:ro",
+        "--filesystem=~/.config/opera:ro",
+        "--filesystem=~/.config/vivaldi:ro",
+        "--filesystem=~/.config/naver-whale:ro"
     ],
     "cleanup":[
         "/include",
@@ -34,8 +43,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://archives.boost.io/release/1.88.0/source/boost_1_88_0.tar.bz2",
-                    "sha256": "46d9d2c06637b219270877c9e16155cbd015b6dc84349af064c088e9b5b12f7b"
+                    "url": "https://archives.boost.io/release/1.89.0/source/boost_1_89_0.tar.bz2",
+                    "sha256": "85a33fa22621b4f314f8e85e1a5e2a9363d22e4f4992925d4bb3bc631b5a0c7a"
                 }
             ]
         },
@@ -53,7 +62,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/libcpr/cpr",
-                    "commit": "b14cd346bf3657ac046ebde136bd9300ce885c5e"
+                    "commit": "a0ff651296a620ed5fabf7d12cf4905fefc7ce86"
                 }
             ]
         },
@@ -118,11 +127,28 @@
                 {
                     "type": "git",
                     "url": "https://github.com/nickvisionapps/libnick",
-                    "tag": "2025.7.6"
+                    "tag": "2025.10.0"
                 }
             ]
         },
         "python3-modules.json",
+        {
+            "name": "aria2",
+            "buildsystem": "simple",
+            "build-commands": [
+                "autoreconf -i",
+                "./configure --prefix=/app --with-ca-bundle=/etc/ssl/certs/ca-certificates.crt",
+                "make -j $FLATPAK_BUILDER_N_JOBS",
+                "make install"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/aria2/aria2.git",
+                    "commit": "412d435b8421915ee5442111c8a6417b2241348d"
+                }
+            ]
+        },
         {
             "name": "ffmpeg",
             "buildsystem": "simple",
@@ -132,16 +158,16 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/autobuild-2025-07-31-15-41/ffmpeg-n7.1.1-56-gc2184b65d2-linux64-gpl-7.1.tar.xz",
-                    "sha256": "b48fd3a4145add1f99b45ed4bdb94873325e9b99bd0061ba9b1d69ff3f5cd893",
+                    "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/autobuild-2026-01-17-14-14/ffmpeg-N-122468-gbb29b51876-linux64-gpl.tar.xz",
+                    "sha256": "9f056f54eb4e9218f984381ef056e32e54674fe8df89050f995f28f7307a25dc",
                     "only-arches": [
                         "x86_64"
                     ]
                 },
                 {
                     "type": "archive",
-                    "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/autobuild-2025-07-31-15-41/ffmpeg-n7.1.1-56-gc2184b65d2-linuxarm64-gpl-7.1.tar.xz",
-                    "sha256": "8640ab5740a3fe47a47438a047f21bc8eb9426994784a81362207d39f10a4ef7",
+                    "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/autobuild-2026-01-17-14-14/ffmpeg-N-122467-gc3d3377fe1-linuxarm64-gpl.tar.xz",
+                    "sha256": "8119fa3c8896a2d0f0cdcbb515a8078caf6662c89839d120a7b2f42d68a204bd",
                     "only-arches": [
                         "aarch64"
                     ]
@@ -149,29 +175,27 @@
             ]
         },
         {
-            "name": "aria2",
-            "config-opts": [
-                "--with-ca-bundle=/etc/ssl/certs/ca-certificates.crt"
+            "name": "deno",
+            "buildsystem": "simple",
+            "build-commands": [
+                "mv * /app/bin/"
             ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/aria2/aria2/releases/download/release-1.37.0/aria2-1.37.0.tar.xz",
-                    "sha256": "60a420ad7085eb616cb6e2bdf0a7206d68ff3d37fb5a956dc44242eb2f79b66b"
-                }
-            ]
-        },
-        {
-            "name": "blueprint-compiler",
-            "buildsystem": "meson",
-            "cleanup": [
-                "*"
-            ],
-            "sources": [
+                    "url": "https://github.com/denoland/deno/releases/download/v2.6.5/deno-x86_64-unknown-linux-gnu.zip",
+                    "sha256": "e0f109b9ae6d828512bdbfc0524779ea42d7c117efd351860589c07506803436",
+                    "only-arches": [
+                        "x86_64"
+                    ]
+                },
                 {
-                    "type": "git",
-                    "url": "https://gitlab.gnome.org/jwestman/blueprint-compiler",
-                    "tag": "v0.16.0"
+                    "type": "archive",
+                    "url": "https://github.com/denoland/deno/releases/download/v2.6.5/deno-aarch64-unknown-linux-gnu.zip",
+                    "sha256": "6613f3ccfc7e36d91b1a856d0a3d3a6d1286d09a9f0d775f99e50706e0ebc81d",
+                    "only-arches": [
+                        "aarch64"
+                    ]
                 }
             ]
         },
@@ -200,7 +224,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/NickvisionApps/Parabolic.git",
-                    "tag": "2025.8.0-beta1"
+                    "tag": "2025.11.1"
                 }
             ]
         }
