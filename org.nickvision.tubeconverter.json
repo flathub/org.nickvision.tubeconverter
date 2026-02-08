@@ -135,7 +135,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/NickvisionApps/Parabolic.git",
-                    "tag": "2026.2.0"
+                    "tag": "2026.2.1"
                 },
                 "nuget-sources.json"
             ]
