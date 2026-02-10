@@ -101,7 +101,7 @@
                 {
                     "type": "archive",
                     "url": "https://github.com/denoland/deno/releases/download/v2.6.8/deno-aarch64-unknown-linux-gnu.zip",
-                    "sha256": "3d70dee6f545bf757aed859e609cf614c1e21c7ab3509cfd0a6d1cc5b044c201",
+                    "sha256": "09a0a800be639986515540ddae2f2752625ed412f63d36c7152c2a72ee78c2d7",
                     "only-arches": [
                         "aarch64"
                     ]
