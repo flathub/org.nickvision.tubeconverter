@@ -1,7 +1,7 @@
 {
     "app-id" : "org.nickvision.tubeconverter",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "49",
+    "runtime-version" : "50",
     "sdk" : "org.gnome.Sdk",
     "sdk-extensions": [
         "org.freedesktop.Sdk.Extension.dotnet10"
@@ -59,24 +59,26 @@
             ]
         },
         {
-            "name": "ffmpeg",
+            "name": "curl-impersonate",
             "buildsystem": "simple",
             "build-commands": [
-                "mv bin/* /app/bin/"
+                "install -Dm755 curl* /app/bin/"
             ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/autobuild-2026-02-09-15-03/ffmpeg-N-122688-g2e79453549-linux64-gpl.tar.xz",
-                    "sha256": "b1042aea939c437fac4af2c907641820a86dffeb9faae51815051111b0295568",
+                    "url": "https://github.com/lexiforest/curl-impersonate/releases/download/v1.5.2/curl-impersonate-v1.5.2.x86_64-linux-gnu.tar.gz",
+                    "sha256": "29907d879bdc783fc46e5841585c2455d46fec5acdcfc2c65a3aa8485bb49850",
+                    "strip-components": 0,
                     "only-arches": [
                         "x86_64"
                     ]
                 },
                 {
                     "type": "archive",
-                    "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/autobuild-2026-02-09-15-03/ffmpeg-N-122688-g2e79453549-linuxarm64-gpl.tar.xz",
-                    "sha256": "515f318bccf24855924dc12bbbb5fafb8a26169aaa88ca84441fadfbce09a4a7",
+                    "url": "https://github.com/lexiforest/curl-impersonate/releases/download/v1.5.2/curl-impersonate-v1.5.2.aarch64-linux-gnu.tar.gz",
+                    "sha256": "e7d3ef043b01caeea68246645eb43c3a55e6f7f0ac5895bc0ffd99a98b0702c5",
+                    "strip-components": 0,
                     "only-arches": [
                         "aarch64"
                     ]
@@ -87,25 +89,67 @@
             "name": "deno",
             "buildsystem": "simple",
             "build-commands": [
-                "mv * /app/bin/"
+                "install -Dm755 deno /app/bin/deno"
             ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/denoland/deno/releases/download/v2.6.9/deno-x86_64-unknown-linux-gnu.zip",
-                    "sha256": "8a677a4b0cea1a25aaecfc70d6c6a288f9ad69af0a92e9e9d513cabaaf3c688f",
+                    "url": "https://github.com/denoland/deno/releases/download/v2.7.12/deno-x86_64-unknown-linux-gnu.zip",
+                    "sha256": "4646ec32b4296fdf963a62a3df3d57e342a3c70376976e5690c34d42e23a3080",
                     "only-arches": [
                         "x86_64"
                     ]
                 },
                 {
                     "type": "archive",
-                    "url": "https://github.com/denoland/deno/releases/download/v2.6.9/deno-aarch64-unknown-linux-gnu.zip",
-                    "sha256": "d1cd2f5f08abdc22156b67fc1cd9e8dcd2e8e3ab5caffe1da603992c8b1b5d67",
+                    "url": "https://github.com/denoland/deno/releases/download/v2.7.12/deno-aarch64-unknown-linux-gnu.zip",
+                    "sha256": "4116c1bb5fa2bba348a1f89c5392d5ecdbb505dd7166796870660556ea6c6c53",
                     "only-arches": [
                         "aarch64"
                     ]
                 }   
+            ]
+        },
+        {
+            "name": "ffmpeg",
+            "buildsystem": "simple",
+            "build-commands": [
+                "install -Dm755 bin/* /app/bin/"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/BtbN/FFmpeg-Builds/releases/download/autobuild-2026-04-18-13-04/ffmpeg-n8.1-10-g7f5c90f77e-linux64-gpl-8.1.tar.xz",
+                    "sha256": "6b58fbee32c098f06dbe1042b8c522c7f0314e538886bdb7cd4a5f7dfd70b75a",
+                    "only-arches": [
+                        "x86_64"
+                    ]
+                },
+                {
+                    "type": "archive",
+                    "url": "https://github.com/BtbN/FFmpeg-Builds/releases/download/autobuild-2026-04-18-13-04/ffmpeg-n8.1-10-g7f5c90f77e-linuxarm64-gpl-8.1.tar.xz",
+                    "sha256": "dbae29a298f607278765dddb21fa0802da40f46b0dc7863422b4cd14d32b9de8",
+                    "only-arches": [
+                        "aarch64"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "webp-pixbuf-loader",
+            "buildsystem": "meson",
+            "config-opts": [ 
+                "-Dgdk_pixbuf_moduledir=/app/lib/org.nickvision.tubeconverter/gdk-pixbuf-2.0/2.10.0/loaders" 
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/aruiz/webp-pixbuf-loader",
+                    "tag": "0.2.7"
+                }
+            ],
+            "post-install": [
+                "gdk-pixbuf-query-loaders /app/lib/org.nickvision.tubeconverter/gdk-pixbuf-2.0/2.10.0/loaders/*.so > /app/lib/org.nickvision.tubeconverter/gdk-pixbuf-2.0/2.10.0/loaders/loaders.cache"
             ]
         },
         {
@@ -135,7 +179,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/NickvisionApps/Parabolic.git",
-                    "tag": "2026.2.4"
+                    "tag": "2026.4.0"
                 },
                 "nuget-sources.json"
             ]
